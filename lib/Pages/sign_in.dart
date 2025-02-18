@@ -28,10 +28,20 @@ class _SignInState extends State<SignIn> {
     try{
       var isAuthState =await auth.signInWithEmailAndPassword(email: email.text, password: password.text);
       Navigator.pushNamed(context, '/homepage');
-    } on FirebaseException
+      Fluttertoast.showToast(
+          msg: "Login Successful!",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0
+      );
+    }
+    // on FirebaseException
     catch(e)
    {
-     print(e);
+     print('erorr massage $e');
    }
   }
 

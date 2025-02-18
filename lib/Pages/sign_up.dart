@@ -4,6 +4,7 @@ import 'package:firebase_ecommerces_project/Bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
   @override
@@ -32,7 +33,28 @@ class _SignUpState extends State<SignUp> {
     }
     on FirebaseAuthException
     catch(err){
-      print(err);
+      if(err.code == 'email-already-in-use'){
+        Fluttertoast.showToast(
+            msg: "Email Already In Use",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0
+        );
+      }
+      else{
+        Fluttertoast.showToast(
+            msg: "Sign Up Successful!",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0
+        );
+      }
     }
   }
 

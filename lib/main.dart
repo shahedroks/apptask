@@ -22,7 +22,7 @@ class MainApp extends StatelessWidget {
       ],
       child: MaterialApp(initialRoute: '/',
           routes: {
-            '/': (context)=>UserCopy(),
+            '/': (context)=>SignIn(),
             '/signup':(context)=>SignUp(),
             '/homepage':(context)=> UsersHomePage()
           },debugShowCheckedModeBanner: false,

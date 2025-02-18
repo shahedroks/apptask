@@ -16,6 +16,7 @@ class _AboutState extends State<About> {
     var decode = jsonDecode(res.body)[0];
       setState(() {
         data=decode;
+        //.map((e)=>Detail.fromJson(e)).toList();
       });
   }
 @override
