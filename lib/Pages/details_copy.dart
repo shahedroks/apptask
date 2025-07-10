@@ -31,38 +31,38 @@ class _DetailsCopyState extends State<DetailsCopy> {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text("Details page"),
+        title: const Text("Details page"),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 20,),
-          Container(
+          const SizedBox(height: 20,),
+          SizedBox(
               height: 300,
               width: 300,
               child: Image(image: NetworkImage('${data['image']}'))),
           Container(
 
-              margin: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
 
-              child: Center(child: Text('${data['title']}',style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold),))),
-          SizedBox(width: 30,),
+              child: Center(child: Text('${data['title']}',style: const TextStyle(fontSize: 40,fontWeight: FontWeight.bold),))),
+          const SizedBox(width: 30,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Container(
                 height: 35,
                 width: 150,
-                decoration: BoxDecoration(color: Colors.grey),
+                decoration: const BoxDecoration(color: Colors.grey),
 
-                child: Text('${data['price']}taka',style: TextStyle(fontSize:25,fontWeight: FontWeight.bold),)),
+                child: Text('${data['price']}taka',style: const TextStyle(fontSize:25,fontWeight: FontWeight.bold),)),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Center(child: Text('${data['description']}...',style: TextStyle(fontSize: 20
                 ,color: Colors.grey[700]),)),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
 
         ],
       ),

@@ -57,32 +57,32 @@ class _SignInState extends State<SignIn> {
           width:MediaQuery.of(context).size.width*10,
           height:MediaQuery.of(context).size.height*10,
           // decoration: BoxDecoration(image:DecorationImage(image: AssetImage('Assets/Buy')) ),
-            decoration: BoxDecoration(image: DecorationImage(image: AssetImage('Assets/SignIn.jpeg'),fit: BoxFit.cover)),
+            decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('Assets/SignIn.jpeg'),fit: BoxFit.cover)),
             child: Scaffold(
               backgroundColor: Colors.transparent,
               body: SingleChildScrollView(
                 child: Column(
                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 150,),
+                    const SizedBox(height: 150,),
                     Container(
-                      margin: EdgeInsets.only(left: 80,top: 200),
-                      child: Text('Welcome Back',
+                      margin: const EdgeInsets.only(left: 80,top: 200),
+                      child: const Text('Welcome Back',
                         style: TextStyle(
                             fontSize: 40,fontWeight: FontWeight.bold,color: Colors.black,),),
                     ),
-                    SizedBox(height: 70,),
+                    const SizedBox(height: 70,),
                     Container(
-                      margin: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                      margin: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
                       child: TextField(controller: email,
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(25),
-                            borderSide: BorderSide(color: Colors.grey)),labelText: 'Enter Your Email',
-                        focusedBorder: OutlineInputBorder(borderSide:BorderSide(color: Colors.black),borderRadius: BorderRadius.circular(25),)
+                            borderSide: const BorderSide(color: Colors.grey)),labelText: 'Enter Your Email',
+                        focusedBorder: OutlineInputBorder(borderSide:const BorderSide(color: Colors.black),borderRadius: BorderRadius.circular(25),)
                       ),),
                       ),
                           Container(
-                            margin: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+                            margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
                             child: TextFormField(controller: password,
                               obscureText:!_isVisible ,
                               decoration: InputDecoration(
@@ -90,51 +90,51 @@ class _SignInState extends State<SignIn> {
                                  setState(() {
                                    _isVisible = !_isVisible;
                                  });
-                                }, icon: _isVisible?Container(child: Icon(CupertinoIcons.eye)):Container(child: Icon(CupertinoIcons.eye_slash))),
-                                  enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(25),borderSide: BorderSide(color: Colors.grey)),labelText: 'Password',
-                                focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black),borderRadius: BorderRadius.circular(25))
+                                }, icon: _isVisible?Container(child: const Icon(CupertinoIcons.eye)):Container(child: const Icon(CupertinoIcons.eye_slash))),
+                                  enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(25),borderSide: const BorderSide(color: Colors.grey)),labelText: 'Password',
+                                focusedBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.black),borderRadius: BorderRadius.circular(25))
                               ),),
                           ),
-                    AnimatedContainer(duration: Duration(
+                    AnimatedContainer(duration: const Duration(
                     )),
-                    SizedBox(height: 130,),
+                    const SizedBox(height: 130,),
                     Row(
                       children: [
                         Container(
-                          margin: EdgeInsets.only(left: 40),
-                          child: Text('Sing in',style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold),),
+                          margin: const EdgeInsets.only(left: 40),
+                          child: const Text('Sing in',style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold),),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         GestureDetector(
                           onTap: (){
                             onChakSignIn();
                           },
                           child: Container(
-                            margin: EdgeInsets.only(right: 40),
+                            margin: const EdgeInsets.only(right: 40),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(50),
                               child: Container(
-                                decoration: BoxDecoration(color: Colors.grey),
-                                child: Icon(Icons.arrow_forward,size: 60,),)
+                                decoration: const BoxDecoration(color: Colors.grey),
+                                child: const Icon(Icons.arrow_forward,size: 60,),)
                             ),
                           ),
                         )
                       ],
                     ),
-                    SizedBox(height: 160,),
+                    const SizedBox(height: 160,),
                     Row(children: [
                       GestureDetector(
                         onTap: (){
                           Navigator.pushNamed(context, '/signup');
                         },
                         child: Container(
-                          margin: EdgeInsets.only(left: 40),
-                            child: Text('Sing up',style: TextStyle(fontSize: 20,decoration: TextDecoration.underline),)),
+                          margin: const EdgeInsets.only(left: 40),
+                            child: const Text('Sing up',style: TextStyle(fontSize: 20,decoration: TextDecoration.underline),)),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Container(
-                          margin:EdgeInsets.only(right: 30),
-                          child: Text('forgate password',style: TextStyle(color: Colors.green,fontSize: 15,),))
+                          margin:const EdgeInsets.only(right: 30),
+                          child: const Text('forgate password',style: TextStyle(color: Colors.green,fontSize: 15,),))
                     ],
                     )
                   ],
