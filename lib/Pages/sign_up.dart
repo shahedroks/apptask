@@ -17,6 +17,7 @@ class _SignUpState extends State<SignUp> {
   TextEditingController email =TextEditingController();
   TextEditingController password =TextEditingController();
   bool isVisible = false;
+    bool Visibl = false;
 
   void onSignUp() async {
     try{
@@ -65,19 +66,19 @@ class _SignUpState extends State<SignUp> {
       width:MediaQuery.of(context).size.width*10,
       height:MediaQuery.of(context).size.height*10,
       // decoration: BoxDecoration(image:DecorationImage(image: AssetImage('Assets/Buy')) ),
-      decoration: BoxDecoration(image: DecorationImage(image: AssetImage('Assets/SignIn.jpeg'),fit: BoxFit.cover)),
+      decoration: const BoxDecoration(image: DecorationImage(image: AssetImage('Assets/SignIn.jpeg'),fit: BoxFit.cover)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 80,
               ),
               Container(
-                margin: EdgeInsets.only(left: 80,top: 200),
-                child: Text(
+                margin: const EdgeInsets.only(left: 80,top: 200),
+                child: const Text(
                   'Create Account',
                   style: TextStyle(
                     fontSize: 40,
@@ -86,41 +87,41 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: TextField(
                   controller: name,
                   decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(color: Colors.grey)),
+                          borderSide: const BorderSide(color: Colors.grey)),
                       labelText: 'Name',
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
+                        borderSide: const BorderSide(color: Colors.black),
                         borderRadius: BorderRadius.circular(25),
                       )),
                 ),
               ),
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: TextField(
                   controller: email,
                   decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(color: Colors.grey)),
+                          borderSide: const BorderSide(color: Colors.grey)),
                       labelText: 'Enter Your Email',
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
+                        borderSide: const BorderSide(color: Colors.black),
                         borderRadius: BorderRadius.circular(25),
                       )),
                 ),
               ),
               Container(
-                        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                         child: TextFormField(
                           controller: password,
                           onChanged: (value) {
@@ -136,25 +137,25 @@ class _SignUpState extends State<SignUp> {
                                       isVisible = !isVisible;
                                     });
                                   },
-                                  icon:isVisible ? Icon(CupertinoIcons.eye)
-                                      : Icon(CupertinoIcons.eye_slash)),
+                                  icon:isVisible ? const Icon(CupertinoIcons.eye)
+                                      : const Icon(CupertinoIcons.eye_slash)),
                               enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(25),
-                                  borderSide: BorderSide(color: Colors.grey)),
+                                  borderSide: const BorderSide(color: Colors.grey)),
                               labelText: 'Password',
                               focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.black),
+                                  borderSide: const BorderSide(color: Colors.black),
                                   borderRadius: BorderRadius.circular(25))),
                         )),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Row(
                 children: [
                   BlocBuilder<CounterBolc, CounterState>(builder: (context, state) {
                     return AnimatedContainer(
-                      duration: Duration(milliseconds: 500),
-                      margin: EdgeInsets.only(left: 25),
+                      duration: const Duration(milliseconds: 500),
+                      margin: const EdgeInsets.only(left: 25),
                       width: 20,
                       height: 20,
                       decoration: BoxDecoration(
@@ -162,28 +163,28 @@ class _SignUpState extends State<SignUp> {
                           border: Border.all(color: Colors.grey.shade500),
                           borderRadius: BorderRadius.circular(50)),
                       child: Container(
-                          child: Icon(
+                          child: const Icon(
                             CupertinoIcons.checkmark_alt,
                             size: 15,
                             color: Colors.white,
                           )),
                     );
                   }),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text('Must be 8 Characters')
+                  const Text('Must be 8 Characters')
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
                 children: [
                   BlocBuilder<CounterBolc, CounterState>(builder: (context, state) {
                     return AnimatedContainer(
-                      duration: Duration(milliseconds: 500),
-                      margin: EdgeInsets.only(left: 25),
+                      duration: const Duration(milliseconds: 500),
+                      margin: const EdgeInsets.only(left: 25),
                       width: 20,
                       height: 20,
                       decoration: BoxDecoration(
@@ -192,43 +193,43 @@ class _SignUpState extends State<SignUp> {
                           border: Border.all(color: Colors.grey.shade500),
                           borderRadius: BorderRadius.circular(50)),
                       child: Container(
-                          child: Icon(
+                          child: const Icon(
                             CupertinoIcons.checkmark_alt,
                             size: 15,
                             color: Colors.white,
                           )),
                     );
                   }),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text('Must be Math One Number')
+                  const Text('Must be Math One Number')
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 130,
               ),
               Row(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(left: 40),
-                    child: Text(
+                    margin: const EdgeInsets.only(left: 40),
+                    child: const Text(
                       'Sing up',
                       style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   GestureDetector(
                     onTap: (){
                       onSignUp();
                     },
                     child: Container(
-                      margin: EdgeInsets.only(right: 40),
+                      margin: const EdgeInsets.only(right: 40),
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(50),
                           child: Container(
-                            decoration: BoxDecoration(color: Colors.grey),
-                            child: Icon(Icons.arrow_forward,
+                            decoration: const BoxDecoration(color: Colors.grey),
+                            child: const Icon(Icons.arrow_forward,
                               size: 60,
                             ),
                           )),
@@ -236,18 +237,18 @@ class _SignUpState extends State<SignUp> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 120,
               ),
               Row(
                 children: [
                   Container(
-                      margin: EdgeInsets.only(left: 40),
+                      margin: const EdgeInsets.only(left: 40),
                       child: GestureDetector(
                           onTap: () {
                             Navigator.pushNamed(context, '/');
                           },
-                          child: Text(
+                          child: const Text(
                             'Sing in',
                             style: TextStyle(
                                 fontSize: 20, decoration: TextDecoration.underline),

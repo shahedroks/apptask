@@ -11,7 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MainApp());}
+  runApp(const MainApp());}
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
   @override
@@ -22,9 +22,9 @@ class MainApp extends StatelessWidget {
       ],
       child: MaterialApp(initialRoute: '/',
           routes: {
-            '/': (context)=>SignIn(),
-            '/signup':(context)=>SignUp(),
-            '/homepage':(context)=> UsersHomePage()
+            '/': (context)=>const SignIn(),
+            '/signup':(context)=>const SignUp(),
+            '/homepage':(context)=> const UsersHomePage()
           },debugShowCheckedModeBanner: false,
       ),
     );

@@ -23,40 +23,40 @@ class _CustomDrawerState extends State<CustomDrawer> {
     return Drawer(
         child: ListView(
           children: [
-            UserAccountsDrawerHeader(accountName: Text('Shahed'), accountEmail: Text('shahedroks@gmail.com')),
+            const UserAccountsDrawerHeader(accountName: Text('Shahed'), accountEmail: Text('shahedroks@gmail.com')),
             ListTile(
               onTap: (){},
-              leading: Icon(MaterialCommunityIcons.face_profile),
-              title: Text('Profile'),
+              leading: const Icon(MaterialCommunityIcons.face_profile),
+              title: const Text('Profile'),
             ),
             ListTile(
               onTap: (){},
-              leading: Icon(Icons.contact_support),
-              title: Text('Support'),
+              leading: const Icon(Icons.contact_support),
+              title: const Text('Support'),
             ),ListTile(
               onTap: (){
                 showDialog(context: context, builder:(BuildContext bc){
                   return AlertDialog(
-                    title:Text('Do You Want Logout'),
+                    title:const Text('Do You Want Logout'),
                     actions: [
                       TextButton(onPressed: (){
                         Navigator.of(context).pop();
-                      }, child:Text('No')),
+                      }, child:const Text('No')),
                       TextButton(onPressed: (){
                         onLogout();
                         Navigator.pushReplacementNamed(context, '/loginpage');
-                      }, child: Text('Yes'))
+                      }, child: const Text('Yes'))
 
                     ],
                   );
                 } );
               },
-              leading: Icon(Icons.login),
-              title: Text('Logout'),
+              leading: const Icon(Icons.login),
+              title: const Text('Logout'),
             ),
           ],
         ),
-      );;
+      );
   }
 }
 

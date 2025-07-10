@@ -28,7 +28,7 @@ class _UsersHomePageState extends State<UsersHomePage> {
     });
 }
 void onRefresh ()async {
-    await Future.delayed(Duration (seconds: 3));
+    await Future.delayed(const Duration (seconds: 3));
     onGetData();
 }
 @override
@@ -41,9 +41,9 @@ void onRefresh ()async {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(110.0),
+        preferredSize: const Size.fromHeight(110.0),
           child: CustomAppber()),
-      drawer: CustomDrawer(),
+      drawer: const CustomDrawer(),
       body: LiquidPullToRefresh(
         color: Colors.transparent,
         backgroundColor: Colors.amber,
@@ -53,17 +53,17 @@ void onRefresh ()async {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 10,),
-              Text(text,style: TextStyle(fontSize: 20),),
+              const SizedBox(height: 10,),
+              const Text(text,style: TextStyle(fontSize: 20),),
               Column(
              children: data.take(6).map((el){
              return Card(
                elevation: 10,
-               color: Color(red),
+               color: const Color(red),
                child: Container(
                  width: double.infinity,
                  height: 200,
-                 margin: EdgeInsets.all(20),
+                 margin: const EdgeInsets.all(20),
                  child: SingleChildScrollView(
                    child: Row(
                      crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,32 +72,32 @@ void onRefresh ()async {
                          onTap: (){
                            Navigator.push(context, MaterialPageRoute(builder: (builder) => About(id: el['id'],)));
                          },
-                         child: Container(
+                         child: SizedBox(
                              height: 200,
                              width: 150,
                              child: Image(image: NetworkImage(el['image']),fit: BoxFit.cover,)),
                        ),
-                       SizedBox(width: 10,),
+                       const SizedBox(width: 10,),
                        Column(
                          crossAxisAlignment: CrossAxisAlignment.start,
         
                          children: [
                            Text(
-                             "${el['title']}".length > 15 ? '${el['title']}'.substring(0, 15)+'...' : '${el['title']}',
-                             style: TextStyle(
+                             "${el['title']}".length > 15 ? '${'${el['title']}'.substring(0, 15)}...' : '${el['title']}',
+                             style: const TextStyle(
                                color: Colors.white,
                                fontSize: 22,
                                fontWeight: FontWeight.w500,
                              ),
                            ),
-                             SizedBox(height: 10,),
+                             const SizedBox(height: 10,),
                            Container(
                              height: 25,
                                width: 100,
-                               decoration: BoxDecoration(color: Colors.white),
-                               child: Center(child: Text('${el['price']} Taka',style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),))),
+                               decoration: const BoxDecoration(color: Colors.white),
+                               child: Center(child: Text('${el['price']} Taka',style: const TextStyle(fontSize: 15,fontWeight: FontWeight.bold),))),
         
-                           SizedBox(height: 15,),
+                           const SizedBox(height: 15,),
                            Row(
                              children: [
                                StarRating(rating: el['rating']['rate'].toDouble(),color:Colors.amber,),
@@ -105,11 +105,11 @@ void onRefresh ()async {
                              ],
                            ),
                            Text("Sold \t (${el['rating']['count']})"),
-                           SizedBox(height: 10,),
+                           const SizedBox(height: 10,),
         
                            Text('${el['description']}'.length > 35?'${el["description"]}'.substring(0,35): '${el['description']}'),
                            Text('${el['description']}'.length > 70?'${el["description"]}'.substring(36,70): '${el['description']}'),
-                           Text('${el['description']}'.length > 71?'${el["description"]}'.substring(71,105)+"...": '${el['description']}'),
+                           Text('${el['description']}'.length > 71?"${'${el["description"]}'.substring(71,105)}...": '${el['description']}'),
         
         
                            // Text('${el['description']}'),

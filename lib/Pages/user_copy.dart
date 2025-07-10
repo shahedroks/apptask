@@ -36,54 +36,54 @@ class _UserCopyState extends State<UserCopy> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(110.0),
+          preferredSize: const Size.fromHeight(110.0),
           child: CustomAppber()),
-      drawer: CustomDrawer(),
+      drawer: const CustomDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 10,),
-            Text(text,style: TextStyle(fontSize: 20),),
+            const SizedBox(height: 10,),
+            const Text(text,style: TextStyle(fontSize: 20),),
             Column(
               children: data.take(6).map((i){
                 return Card(
                   elevation: 10,
-                  color: Color(red),
+                  color: const Color(red),
                   child: Container(
                     width: double.infinity,
                     height: 200,
-                    margin: EdgeInsets.all(20),
+                    margin: const EdgeInsets.all(20),
                     child: SingleChildScrollView(
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
+                          SizedBox(
                               height: 200,
                               width: 150,
                               child: Image(image: NetworkImage(i.image),fit: BoxFit.cover,)),
-                          SizedBox(width: 10,),
+                          const SizedBox(width: 10,),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
 
                             children: [
                               Text(
-                                "${i.title}".length > 15 ? '${i.title}'.substring(0, 15)+'...' : '${i.title}',
-                                style: TextStyle(
+                                "${i.title}".length > 15 ? '${'${i.title}'.substring(0, 15)}...' : '${i.title}',
+                                style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 22,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
-                              SizedBox(height: 10,),
+                              const SizedBox(height: 10,),
                               Container(
                                   height: 25,
                                   width: 100,
-                                  decoration: BoxDecoration(color: Colors.white),
-                                  child: Center(child: Text('${i.price} Taka',style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),))),
-                              SizedBox(height: 15,),
+                                  decoration: const BoxDecoration(color: Colors.white),
+                                  child: Center(child: Text('${i.price} Taka',style: const TextStyle(fontSize: 15,fontWeight: FontWeight.bold),))),
+                              const SizedBox(height: 15,),
                               StarRating(rating: i.rating.rate!.toDouble(),color:Colors.red,),
                               Text('(${i.rating.rate})'),
-                              SizedBox(height: 15,),
+                              const SizedBox(height: 15,),
                               Text('${i.description}',)
 
 
